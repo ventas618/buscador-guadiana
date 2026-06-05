@@ -18,15 +18,13 @@ st.title("🏗️ Materiales y Perfiles del Guadiana")
 st.subheader("Buscador de Productos y Generador de Cotizaciones")
 st.write("Busca tus materiales, agrégalos a tu lista y envía tu pedido por WhatsApp para recibir tu presupuesto de inmediato.")
 
-# Función para cargar los datos de Excel
 @st.cache_data
 def cargar_datos():
     try:
+        # Lee el archivo Excel. Asegúrate de que se llame así en tu repositorio.
         df = pd.read_excel("inventario.xlsx")
+        # Limpieza básica: quitar espacios en blanco en los nombres de las columnas
         df.columns = df.columns.str.strip()
-        # Asegurar que las columnas clave sean texto limpio
-        for col in ['CLAVE', 'PRODUCTO', 'MEDIDA']:
-            df[col] = df[col].astype(str).str.strip()
         return df
     except Exception as e:
         st.error("Error al cargar el archivo 'inventario.xlsx'. Verifica que el nombre sea correcto.")
@@ -35,6 +33,7 @@ def cargar_datos():
 df = cargar_datos()
 
 if df is not None:
+    # Asegurar que las columnas requeridas existan en el Excel
     columnas_requeridas = ['CLAVE', 'PRODUCTO', 'MEDIDA']
     if all(col in df.columns for col in columnas_requeridas):
         
