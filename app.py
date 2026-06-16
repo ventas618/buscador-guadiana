@@ -14,7 +14,6 @@ if 'carrito' not in st.session_state:
     st.session_state.carrito = []
 
 # Encabezado principal
-st.title("🏗️ Materiales y Perfiles del Guadiana")
 st.subheader("Buscador de Productos y Generador de Cotizaciones")
 st.write("Busca tus materiales, agrégalos a tu lista y envía tu pedido por WhatsApp para recibir tu presupuesto de inmediato.")
 
