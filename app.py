@@ -4,7 +4,7 @@ import urllib.parse
 
 # Configuración de la página
 st.set_page_config(
-    page_title="Cotizador - Materiales y Perfiles del Guadiana",
+   
     page_icon="🏗️",
     layout="wide"
 )
