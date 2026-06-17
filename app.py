@@ -140,7 +140,7 @@ if df is not None:
             mensaje_codificado = urllib.parse.quote(mensaje_wa)
             
             # REEMPLAZA ESTE NÚMERO POR EL DE TU NEGOCIO (con código de país, ej: 52 para México)
-            numero_whatsapp = "526184421022" 
+            numero_whatsapp = "526181178429" 
             
             url_final = f"https://wa.me/{numero_whatsapp}?text={mensaje_codificado}"
             
